@@ -4,6 +4,10 @@
   "description": "My personal website",
   "main": "index.js",
   "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export",
     "lint": "eslint .; exit 0",
     "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check"
   },
@@ -21,5 +25,11 @@
     "eslint-plugin-prettier": "^2.1.2",
     "eslint-plugin-react": "^7.2.0",
     "prettier": "^1.5.3"
+  },
+  "dependencies": {
+    "next": "^3.0.3",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
   }
 }

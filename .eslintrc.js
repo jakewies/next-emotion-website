@@ -3,7 +3,12 @@ module.exports = {
     browser: true,
     es6: true
   },
-  extends: ['eslint:recommended', 'prettier', 'prettier/react'],
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'prettier',
+    'prettier/react'
+  ],
   plugins: ['prettier', 'react'],
   parserOptions: {
     ecmaVersion: 6,
@@ -14,8 +19,19 @@ module.exports = {
     }
   },
   rules: {
-    'prettier/prettier': ['error', 'fb'],
+    'prettier/prettier': [
+      'error',
+      {
+        singleQuote: true,
+        trailingComma: 'all',
+        bracketSpacing: false,
+        jsxBracketSameLine: true,
+        parser: 'flow',
+        semi: false
+      }
+    ],
     'linebreak-style': ['error', 'unix'],
-    quotes: ['error', 'single']
+    quotes: ['error', 'single'],
+    semi: 'off'
   }
-};
+}
