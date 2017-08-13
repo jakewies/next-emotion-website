@@ -2,10 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../components/Layout'
 import Link from 'next/link'
+import slug from 'slug'
 
 const PostLink = props =>
   <li>
-    <Link href={`/post?title=${props.title}`}>
+    <Link
+      as={`/blog/${slug(props.title, {lower: true})}`}
+      href={`/post?title=${props.title}`}>
       <a>
         {props.title}
       </a>
@@ -16,7 +19,7 @@ const Index = () =>
   <Layout>
     <h1>Blog</h1>
     <ul>
-      <PostLink title="Hello Next.js" />
+      <PostLink title="Next is awesome" />
       <PostLink title="Learn Next.js is awesome" />
       <PostLink title="Tits" />
     </ul>
