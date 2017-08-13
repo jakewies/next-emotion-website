@@ -4,13 +4,22 @@
   "description": "My personal website",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint .; exit 0"
+    "lint": "eslint .; exit 0",
+    "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check"
   },
-  "keywords": ["website", "blog", "portfolio", "Jake Wiesler"],
+  "keywords": [
+    "website",
+    "blog",
+    "portfolio",
+    "Jake Wiesler"
+  ],
   "author": "Jake Wiesler <jakewiesler@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^4.4.1",
-    "eslint-plugin-react": "^7.2.0"
+    "eslint-config-prettier": "^2.3.0",
+    "eslint-plugin-prettier": "^2.1.2",
+    "eslint-plugin-react": "^7.2.0",
+    "prettier": "^1.5.3"
   }
 }

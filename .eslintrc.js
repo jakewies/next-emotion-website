@@ -3,20 +3,19 @@ module.exports = {
     browser: true,
     es6: true
   },
-  extends: "eslint:recommended",
+  extends: ['eslint:recommended', 'prettier', 'prettier/react'],
+  plugins: ['prettier', 'react'],
   parserOptions: {
     ecmaVersion: 6,
-    sourceType: "module",
+    sourceType: 'module',
     ecmaFeatures: {
       experimentalObjectRestSpread: true,
       jsx: true
     }
   },
-  plugins: ["react"],
   rules: {
-    indent: ["error", 4],
-    "linebreak-style": ["error", "unix"],
-    quotes: ["error", "single"],
-    semi: ["error", "always"]
+    'prettier/prettier': ['error', 'fb'],
+    'linebreak-style': ['error', 'unix'],
+    quotes: ['error', 'single']
   }
 };
