@@ -1,7 +1,8 @@
 module.exports = {
   env: {
     browser: true,
-    es6: true
+    es6: true,
+    node: true
   },
   extends: [
     'eslint:recommended',
@@ -10,8 +11,9 @@ module.exports = {
     'prettier/react'
   ],
   plugins: ['prettier', 'react'],
+  parser: 'babel-eslint',
   parserOptions: {
-    ecmaVersion: 6,
+    ecmaVersion: 7,
     sourceType: 'module',
     ecmaFeatures: {
       experimentalObjectRestSpread: true,
@@ -23,7 +25,6 @@ module.exports = {
       'error',
       {
         singleQuote: true,
-        trailingComma: 'all',
         bracketSpacing: false,
         jsxBracketSameLine: true,
         parser: 'flow',
@@ -32,6 +33,7 @@ module.exports = {
     ],
     'linebreak-style': ['error', 'unix'],
     quotes: ['error', 'single'],
-    semi: 'off'
+    semi: 'off',
+    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off'
   }
 }

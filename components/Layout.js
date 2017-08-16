@@ -5,7 +5,7 @@ import Header from './Header'
 const layoutStyle = {
   margin: 20,
   padding: 20,
-  border: '1px solid #DDD',
+  border: '1px solid #DDD'
 }
 
 const Layout = props =>
@@ -15,7 +15,7 @@ const Layout = props =>
   </div>
 
 Layout.propTypes = {
-  children: PropTypes.array.isRequired,
+  children: PropTypes.array.isRequired
 }
 
 export default Layout

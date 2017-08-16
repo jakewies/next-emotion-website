@@ -1,14 +1,11 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Layout from '../components/Layout'
 import Link from 'next/link'
-import slug from 'slug'
+import PropTypes from 'prop-types'
 
 const PostLink = props =>
   <li>
-    <Link
-      as={`/blog/${slug(props.title, {lower: true})}`}
-      href={`/post?title=${props.title}`}>
+    <Link as={`/p/${props.id}`} href={`/post?title=${props.title}`}>
       <a>
         {props.title}
       </a>
@@ -17,16 +14,17 @@ const PostLink = props =>
 
 const Index = () =>
   <Layout>
-    <h1>Blog</h1>
+    <h1>My Blog</h1>
     <ul>
-      <PostLink title="Next is awesome" />
-      <PostLink title="Learn Next.js is awesome" />
-      <PostLink title="Tits" />
+      <PostLink id="hello-nextjs" title="Hello Next.js" />
+      <PostLink id="learn-nextjs" title="Learn Next.js is awesome" />
+      <PostLink id="deploy-nextjs" title="Deploy apps with Zeittt" />
     </ul>
   </Layout>
 
 PostLink.propTypes = {
-  title: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired
 }
 
 export default Index
