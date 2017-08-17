@@ -25,9 +25,8 @@ module.exports = {
       'error',
       {
         singleQuote: true,
-        bracketSpacing: false,
+        bracketSpacing: true,
         jsxBracketSameLine: true,
-        parser: 'flow',
         semi: false
       }
     ],
