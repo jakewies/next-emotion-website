@@ -1,17 +1,24 @@
 import React from 'react'
 import Link from 'next/link'
+import styled from 'emotion/react'
 
-const linkStyle = {
-  marginRight: 15
-}
+const Anchor = styled.a`
+  margin-right: 15px;
+  text-decoration: none;
+  color: #3b47ef;
+  cursor: pointer;
+`
 
 const Header = () =>
   <div>
     <Link href="/">
-      <a style={linkStyle}>Home</a>
+      <Anchor>Home</Anchor>
+    </Link>
+    <Link href="/blog">
+      <Anchor>Blog</Anchor>
     </Link>
     <Link href="/about">
-      <a style={linkStyle}>About</a>
+      <Anchor>About</Anchor>
     </Link>
   </div>
 

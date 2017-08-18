@@ -2,7 +2,7 @@ const express = require('express')
 const next = require('next')
 
 const dev = process.env.NODE_ENV !== 'production'
-const app = next({dev})
+const app = next({ dev })
 const handle = app.getRequestHandler()
 
 app
@@ -10,9 +10,9 @@ app
   .then(() => {
     const server = express()
 
-    server.get('/p/:id', (req, res) => {
+    server.get('/blog/:id', (req, res) => {
       const actualPage = '/post'
-      const queryParams = {title: req.params.id}
+      const queryParams = { title: req.params.id }
       app.render(req, res, actualPage, queryParams)
     })
 
