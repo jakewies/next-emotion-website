@@ -6,17 +6,12 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
-    "start": "next start",
+    "start": "NODE_ENV=production node server.js",
     "export": "next export",
     "lint": "eslint .; exit 0",
     "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check"
   },
-  "keywords": [
-    "website",
-    "blog",
-    "portfolio",
-    "Jake Wiesler"
-  ],
+  "keywords": ["website", "blog", "portfolio", "Jake Wiesler"],
   "author": "Jake Wiesler <jakewiesler@gmail.com>",
   "license": "ISC",
   "devDependencies": {

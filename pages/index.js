@@ -27,6 +27,14 @@ const Item = styled.li`
   margin: 5px 0;
 `
 
+function getPosts() {
+  return [
+    { id: 'hello-nextjs', title: 'Hello Next.js' },
+    { id: 'learn-nextjs', title: 'Learn Next.js is awesome' },
+    { id: 'deploy-nextjs', title: 'Deploy apps with ZEIT' }
+  ]
+}
+
 const PostLink = props =>
   <Item>
     <Link as={`/p/${props.id}`} href={`/post?title=${props.title}`}>
@@ -40,9 +48,9 @@ const Index = () =>
   <Layout>
     <h1 className={fontFamily}>My Blog</h1>
     <List>
-      <PostLink id="hello-nextjs" title="Hello Next.js" />
-      <PostLink id="learn-nextjs" title="Learn Next.js is awesome" />
-      <PostLink id="deploy-nextjs" title="Deploy apps with Zeittt" />
+      {getPosts().map(post =>
+        <PostLink key={post.id} id={post.id} title={post.title} />
+      )}
     </List>
   </Layout>
 
