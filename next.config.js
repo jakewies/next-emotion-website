@@ -6,15 +6,15 @@ module.exports = {
       '/blog': { page: '/blog' },
       '/blog/hello-nextjs': {
         page: '/post',
-        query: { title: 'Hello Next.js' }
+        query: { id: 'hello-nextjs' }
       },
       '/blog/learn-nextjs': {
         page: '/post',
-        query: { title: 'Learn Next.js is awesome' }
+        query: { id: 'learn-nextjs' }
       },
       '/blog/deploy-nextjs': {
         page: '/post',
-        query: { title: 'Deploy apps with Zeit' }
+        query: { id: 'deploy-nextjs' }
       }
     }
   },

@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import axios from 'axios'
+import { posts } from '../posts.json'
 
 /* eslint react/prop-types: 0 */
 
@@ -14,11 +14,9 @@ const Post = props =>
     </p>
   </Layout>
 
-Post.getInitialProps = async function({ req, query }) {
-  // If server, req will be defined
-  const baseUrl = req ? `${req.protocol}://${req.get('Host')}` : ''
-  const res = await axios.get(`${baseUrl}/api/posts/${query.id}`)
-  return { post: res.data }
+Post.getInitialProps = async function({ query }) {
+  const post = posts.find(post => post.id === query.id)
+  return { post }
 }
 
 export default Post
