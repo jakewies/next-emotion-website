@@ -1,21 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+
 import Header from './Header'
 
-const layoutStyle = {
-  margin: 20,
-  padding: 20,
-  border: '1px solid #DDD'
-}
-
 const Layout = props =>
-  <div style={layoutStyle}>
+  <div>
     <Header />
     {props.children}
   </div>
 
 Layout.propTypes = {
-  children: PropTypes.array.isRequired
+  children: PropTypes.any.isRequired
 }
 
 export default Layout
