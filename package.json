@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
+    "build:content": "processmd posts/markdown/**/*.md --outputDir posts/json --summaryOutput posts/index.json",
     "lint": "eslint .; exit 0",
     "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check"
   },
@@ -15,6 +16,11 @@
     "website",
     "blog",
     "portfolio",
+    "next",
+    "nextjs",
+    "react",
+    "static site generator",
+    "static",
     "Jake Wiesler"
   ],
   "author": "Jake Wiesler <jakewiesler@gmail.com>",
@@ -27,7 +33,8 @@
     "eslint-loader": "^1.9.0",
     "eslint-plugin-prettier": "^2.1.2",
     "eslint-plugin-react": "^7.2.0",
-    "prettier": "^1.5.3"
+    "prettier": "^1.5.3",
+    "processmd": "^3.1.5"
   },
   "dependencies": {
     "emotion": "^7.0.13",

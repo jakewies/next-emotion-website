@@ -1,22 +1,23 @@
 import React from 'react'
-import Layout from '../components/Layout'
-import { posts } from '../posts.json'
-
-/* eslint react/prop-types: 0 */
+import PropTypes from 'prop-types'
+import Layout from '../src/components/Layout'
+import { getPost } from '../src/utils'
 
 const Post = props =>
   <Layout>
     <h1>
-      {props.post.title}
+      {props.title}
     </h1>
-    <p>
-      {props.post.content}
-    </p>
+    <div dangerouslySetInnerHTML={{ __html: props.content }} />
   </Layout>
 
-Post.getInitialProps = async function({ query }) {
-  const post = posts.find(post => post.id === query.id)
-  return { post }
+Post.getInitialProps = ({ query }) => {
+  return getPost(query.id)
+}
+
+Post.propTypes = {
+  title: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired
 }
 
 export default Post
