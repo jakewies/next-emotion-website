@@ -37,7 +37,6 @@
     "processmd": "^3.1.5"
   },
   "dependencies": {
-    "emotion": "^7.0.13",
     "next": "^3.0.3",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",

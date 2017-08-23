@@ -4,7 +4,7 @@ import Layout from '../src/components/Layout'
 import { getPost } from '../src/utils'
 
 const Post = props =>
-  <Layout>
+  <Layout title={props.title}>
     <h1>
       {props.title}
     </h1>

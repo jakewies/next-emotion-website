@@ -3,7 +3,7 @@ import Layout from '../src/components/Layout'
 
 function Index() {
   return (
-    <Layout>
+    <Layout title="Jake Wiesler">
       <h1>Home</h1>
     </Layout>
   )

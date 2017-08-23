@@ -4,7 +4,7 @@ import Posts from '../src/components/Posts'
 
 function Blog() {
   return (
-    <Layout>
+    <Layout title="Blog">
       <h1>Blog</h1>
       <Posts />
     </Layout>
