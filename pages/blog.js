@@ -1,5 +1,5 @@
 import Layout from '../src/components/page/layout'
-import Posts from '../src/components/posts'
+import Posts from '../src/components/blog'
 
 function Blog() {
   return (

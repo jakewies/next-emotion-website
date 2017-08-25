@@ -4,17 +4,9 @@ module.exports = {
       '/': { page: '/' },
       '/about': { page: '/about' },
       '/blog': { page: '/blog' },
-      '/blog/hello-nextjs': {
+      '/blog/test-typography-1': {
         page: '/post',
-        query: { id: 'hello-nextjs' }
-      },
-      '/blog/learn-nextjs': {
-        page: '/post',
-        query: { id: 'learn-nextjs' }
-      },
-      '/blog/deploy-nextjs': {
-        page: '/post',
-        query: { id: 'deploy-nextjs' }
+        query: { id: 'test-typography-1' }
       }
     }
   },

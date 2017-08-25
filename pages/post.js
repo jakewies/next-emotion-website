@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import Layout from '../src/components/page/layout'
-import Content from '../src/components/post/content'
+import Content from '../src/components/blog/post-content'
 import { getPost } from '../src/utils'
 
 import { headings } from '../typography_config'

@@ -1,6 +1,6 @@
 import PostLink from './post-link'
-import { getPosts, formatPostId } from '../utils'
-import ARCHIVE from '../../posts/index.json'
+import { getPosts, formatPostId } from '../../utils'
+import ARCHIVE from '../../../posts/index.json'
 
 export default function Posts() {
   const posts = getPosts(ARCHIVE)
