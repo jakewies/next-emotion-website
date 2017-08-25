@@ -1,5 +1,4 @@
-import React from 'react'
-import PostLink from './PostLink'
+import PostLink from './post-link'
 import { getPosts, formatPostId } from '../utils'
 import ARCHIVE from '../../posts/index.json'
 

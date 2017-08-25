@@ -1,46 +1,16 @@
 {
   "fileMap": {
-    "posts/json/test-post-2.json": {
-      "title": "Test Title 2",
-      "date": "2017-08-19T00:00:00.000Z",
+    "posts/json/test-typography-1.json": {
+      "title": "Testing Typography For The Modern Age",
+      "date": "2017-07-23T00:00:00.000Z",
       "dir": "posts/json",
-      "base": "test-post-2.json",
+      "base": "test-typography-1.json",
       "ext": ".json",
-      "sourceBase": "test-post-2.md",
-      "sourceExt": ".md"
-    },
-    "posts/json/nextjs-is-cool.json": {
-      "title": "Nextjs Is Cool",
-      "date": "2017-08-21T00:00:00.000Z",
-      "dir": "posts/json",
-      "base": "nextjs-is-cool.json",
-      "ext": ".json",
-      "sourceBase": "nextjs-is-cool.md",
-      "sourceExt": ".md"
-    },
-    "posts/json/test-post-1.json": {
-      "title": "Test Title 1",
-      "date": "2017-08-17T00:00:00.000Z",
-      "dir": "posts/json",
-      "base": "test-post-1.json",
-      "ext": ".json",
-      "sourceBase": "test-post-1.md",
-      "sourceExt": ".md"
-    },
-    "posts/json/tree-shaking-in-webpack-2.json": {
-      "title": "Tree-shaking ES6 Modules in webpack 2",
-      "date": "2017-01-16T00:00:00.000Z",
-      "dir": "posts/json",
-      "base": "tree-shaking-in-webpack-2.json",
-      "ext": ".json",
-      "sourceBase": "tree-shaking-in-webpack-2.md",
+      "sourceBase": "test-typography-1.md",
       "sourceExt": ".md"
     }
   },
   "sourceFileArray": [
-    "posts/markdown/nextjs-is-cool.md",
-    "posts/markdown/test-post-1.md",
-    "posts/markdown/test-post-2.md",
-    "posts/markdown/tree-shaking-in-webpack-2.md"
+    "posts/markdown/test-typography-1.md"
   ]
 }

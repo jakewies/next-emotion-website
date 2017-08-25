@@ -10,7 +10,8 @@
     "export": "next export",
     "build:content": "processmd posts/markdown/**/*.md --outputDir posts/json --summaryOutput posts/index.json",
     "lint": "eslint .; exit 0",
-    "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check"
+    "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
+    "clean": "rimraf"
   },
   "keywords": [
     "website",
@@ -34,12 +35,15 @@
     "eslint-plugin-prettier": "^2.1.2",
     "eslint-plugin-react": "^7.2.0",
     "prettier": "^1.5.3",
-    "processmd": "^3.1.5"
+    "processmd": "^3.1.5",
+    "rimraf": "^2.6.1"
   },
   "dependencies": {
+    "moment": "^2.18.1",
     "next": "^3.0.3",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "styled-components": "^2.1.2"
   }
 }

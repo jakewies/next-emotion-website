@@ -1,6 +1,5 @@
-import React from 'react'
-import Layout from '../src/components/Layout'
-import Posts from '../src/components/Posts'
+import Layout from '../src/components/page/layout'
+import Posts from '../src/components/posts'
 
 function Blog() {
   return (

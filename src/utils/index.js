@@ -1,3 +1,5 @@
+import { formatDate } from './dates'
+
 /*
  * @param {object}  archive - A JSON object summarizing a list of posts
  * @returns {array}         - Of individual post objects, sorted by date
@@ -26,13 +28,14 @@ export function getPosts(archive) {
 
 /*
  * @param {string}  id - A string representing a post's '.json' filename, located at ./posts/json/< id >.json
- * @returns {array}    - An object containing a post's title and html content
+ * @returns {array}    - An object containing a post's title, date and html content
  */
 
 export function getPost(id) {
   const post = require(`../../posts/json/${id}.json`)
   return {
     title: post.title,
+    date: formatDate(post.date, 'MM.D.YY'),
     content: post.bodyHtml
   }
 }
