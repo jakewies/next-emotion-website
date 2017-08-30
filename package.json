@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "build:content": "processmd src/posts/markdown/**/*.md --outputDir static/posts --summaryOutput src/posts/index.json",
+    "build:content": "processmd src/posts/markdown/**/*.md --outputDir posts --summaryOutput src/posts/index.json",
     "lint": "eslint .; exit 0",
     "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
     "clean": "rimraf"

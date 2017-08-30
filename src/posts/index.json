@@ -1,9 +1,9 @@
 {
   "fileMap": {
-    "static/posts/test-typography-1.json": {
+    "posts/test-typography-1.json": {
       "title": "Testing Typography For The Modern Age",
       "date": "2017-07-23T00:00:00.000Z",
-      "dir": "static/posts",
+      "dir": "posts",
       "base": "test-typography-1.json",
       "ext": ".json",
       "sourceBase": "test-typography-1.md",

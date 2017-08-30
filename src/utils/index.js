@@ -13,7 +13,7 @@ export function getPosts() {
     POST_ARCHIVE.fileMap &&
     Object.keys(POST_ARCHIVE.fileMap)
       .filter(file => {
-        if (file.indexOf('static/posts') === 0) {
+        if (file.indexOf('posts') === 0) {
           return true
         }
       })

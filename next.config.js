@@ -1,14 +1,26 @@
 module.exports = {
-  exportPathMap: function() {
-    return {
+  async exportPathMap() {
+    const { fileMap: posts } = await require('./src/posts/index.json')
+
+    // Converts blog post ids into page objects for next export
+    const postPages = Object.keys(posts)
+      .map(key => posts[key].base.slice(0, -5))
+      .reduce(
+        (posts, post) =>
+          Object.assign({}, posts, {
+            [`/blog/${post}`]: { page: '/post', query: { id: post } }
+          }),
+        {}
+      )
+
+    // base pages
+    const pages = {
       '/': { page: '/' },
       '/about': { page: '/about' },
-      '/blog': { page: '/blog' },
-      '/blog/test-typography-1': {
-        page: '/post',
-        query: { id: 'test-typography-1' }
-      }
+      '/blog': { page: '/blog' }
     }
+
+    return Object.assign({}, postPages, pages)
   },
   // Performs customizations to webpack config
   webpack: (config, { dev }) => {
