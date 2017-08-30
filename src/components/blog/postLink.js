@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types'
 import Link from 'next/link'
 
-const PostLink = props =>
+const PostLink = ({ id, title }) =>
   <li>
-    <Link as={`/blog/${props.id}`} href={`/post?id=${props.id}`}>
+    <Link as={`/blog/${id}`} href={`/post?id=${id}`}>
       <a>
-        {props.title}
+        {title}
       </a>
     </Link>
   </li>

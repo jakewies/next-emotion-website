@@ -20,12 +20,12 @@ injectGlobal`
   }
 `
 
-const Layout = props =>
+const Layout = ({ title, children }) =>
   <div>
-    <Meta title={props.title} />
+    <Meta title={title} />
     <main>
       <Header />
-      {props.children}
+      {children}
     </main>
   </div>
 

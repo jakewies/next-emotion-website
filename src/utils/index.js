@@ -1,4 +1,5 @@
-import { formatDate } from './dates'
+import moment from 'moment'
+import POST_ARCHIVE from '../posts/index.json'
 
 /*
  * @param {object}  archive - A JSON object summarizing a list of posts
@@ -6,18 +7,17 @@ import { formatDate } from './dates'
  * ---
  * Taken from https://github.com/tscanlin/next-blog, thanks for the inspiration Tim!
  */
-
-export function getPosts(archive) {
+export function getPosts() {
   return (
-    archive &&
-    archive.fileMap &&
-    Object.keys(archive.fileMap)
+    POST_ARCHIVE &&
+    POST_ARCHIVE.fileMap &&
+    Object.keys(POST_ARCHIVE.fileMap)
       .filter(file => {
-        if (file.indexOf('posts/json') === 0) {
+        if (file.indexOf('static/posts') === 0) {
           return true
         }
       })
-      .map(file => archive.fileMap[file])
+      .map(file => POST_ARCHIVE.fileMap[file])
       .sort((a, b) => {
         const aDate = Date.parse(a.date)
         const bDate = Date.parse(b.date)
@@ -27,24 +27,19 @@ export function getPosts(archive) {
 }
 
 /*
- * @param {string}  id - A string representing a post's '.json' filename, located at ./posts/json/< id >.json
- * @returns {array}    - An object containing a post's title, date and html content
- */
-
-export function getPost(id) {
-  const post = require(`../../posts/json/${id}.json`)
-  return {
-    title: post.title,
-    date: formatDate(post.date, 'MM.D.YY'),
-    content: post.bodyHtml
-  }
-}
-
-/*
  * @param {string}   url - The name of the json file containing post data
  * @returns {string}     - Name of file minus '.json' file extension
  */
 export function formatPostId(url) {
   // There are 5 chars in '.json', so slice url.length - 5
   return url.slice(0, -5)
+}
+
+/*
+ * @param {string}   date   - A JavaScript date 
+ * @param {string}   format - MM.D.YY
+ * @returns {string}        - Formatted string representing post's publish date
+ */
+export function formatDate(date, format) {
+  return moment(date).format(format)
 }

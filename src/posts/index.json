@@ -1,9 +1,9 @@
 {
   "fileMap": {
-    "posts/json/test-typography-1.json": {
+    "static/posts/test-typography-1.json": {
       "title": "Testing Typography For The Modern Age",
       "date": "2017-07-23T00:00:00.000Z",
-      "dir": "posts/json",
+      "dir": "static/posts",
       "base": "test-typography-1.json",
       "ext": ".json",
       "sourceBase": "test-typography-1.md",
@@ -11,6 +11,6 @@
     }
   },
   "sourceFileArray": [
-    "posts/markdown/test-typography-1.md"
+    "src/posts/markdown/test-typography-1.md"
   ]
 }
