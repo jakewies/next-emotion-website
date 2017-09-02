@@ -33,12 +33,3 @@ export function formatPostId(url) {
   // There are 5 chars in '.json', so slice url.length - 5
   return url.slice(0, -5)
 }
-
-// /*
-//  * @param {string}   date   - A JavaScript date
-//  * @param {string}   format - MM.D.YY
-//  * @returns {string}        - Formatted string representing post's publish date
-//  */
-// export function formatDate(date, format) {
-//   return moment.utc(date).format(format)
-// }
