@@ -41,5 +41,5 @@ export function formatPostId(url) {
  * @returns {string}        - Formatted string representing post's publish date
  */
 export function formatDate(date, format) {
-  return moment(date).format(format)
+  return moment.utc(date).format(format)
 }

@@ -1,5 +1,14 @@
 {
   "fileMap": {
+    "posts/tree-shaking-in-webpack-2.json": {
+      "title": "Tree-Shaking ES6 Modules in webpack 2",
+      "date": "2017-01-16T00:00:00.000Z",
+      "dir": "posts",
+      "base": "tree-shaking-in-webpack-2.json",
+      "ext": ".json",
+      "sourceBase": "tree-shaking-in-webpack-2.md",
+      "sourceExt": ".md"
+    },
     "posts/test-typography-1.json": {
       "title": "Testing Typography For The Modern Age",
       "date": "2017-07-23T00:00:00.000Z",
@@ -11,6 +20,7 @@
     }
   },
   "sourceFileArray": [
-    "src/posts/markdown/test-typography-1.md"
+    "src/posts/markdown/test-typography-1.md",
+    "src/posts/markdown/tree-shaking-in-webpack-2.md"
   ]
 }

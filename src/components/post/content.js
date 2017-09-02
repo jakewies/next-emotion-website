@@ -1,20 +1,19 @@
 import styled from 'styled-components'
-import { headings, content } from '../../../typography_config'
 
 const Content = styled.section`
   --base-line-height: 1.7;
   --leading: calc(var(--base-line-height) * 1rem);
   --scale: 1.618;
+  color: #333;
 
   /* Blog post typography base */
-  font-family: ${content}, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 
   h2,
   h3,
   h4 {
-    /* Change heading typefaces here */
-    font-family: ${headings};
-    font-weight: 400;
+    font-weight: 500;
     margin-top: var(--leading);
     margin-bottom: 0;
     line-height: var(--leading);
@@ -40,6 +39,10 @@ const Content = styled.section`
     font-weight: 300;
   }
 
+  a {
+    color: fuchsia;
+  }
+
   ul,
   ol {
     margin-top: var(--leading);
@@ -63,10 +66,13 @@ const Content = styled.section`
     line-height: var(--leading);
     margin-top: var(--leading);
     margin-bottom: var(--leading);
+    width: 90%;
+    margin: 0 auto;
+    font-style: italic;
+    color: #777;
   }
 
-  pre,
-  code {
+  pre {
     display: block;
     width: 100%;
     padding: 20px;
@@ -75,15 +81,24 @@ const Content = styled.section`
     border-radius: 5px;
     vertical-align: bottom;
     overflow: scroll;
-    font-family: monospace;
-    font-size: 0.8rem;
+    font-family: menlo, monospace;
     margin-top: var(--leading);
+  }
+
+  code {
+    color: fuchsia;
+    border: 1px solid #eee;
+    background: #f7f7f7;
+    padding: 3px;
+    font-size: 1rem;
   }
 
   pre > code {
     margin: 0;
     border: 0;
     padding: 0;
+    background: none;
+    font-size: 1rem;
   }
 `
 
