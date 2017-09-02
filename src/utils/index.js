@@ -1,4 +1,3 @@
-import moment from 'moment'
 import POST_ARCHIVE from '../posts/index.json'
 
 /*
@@ -35,11 +34,11 @@ export function formatPostId(url) {
   return url.slice(0, -5)
 }
 
-/*
- * @param {string}   date   - A JavaScript date 
- * @param {string}   format - MM.D.YY
- * @returns {string}        - Formatted string representing post's publish date
- */
-export function formatDate(date, format) {
-  return moment.utc(date).format(format)
-}
+// /*
+//  * @param {string}   date   - A JavaScript date
+//  * @param {string}   format - MM.D.YY
+//  * @returns {string}        - Formatted string representing post's publish date
+//  */
+// export function formatDate(date, format) {
+//   return moment.utc(date).format(format)
+// }

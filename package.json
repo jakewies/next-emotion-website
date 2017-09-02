@@ -40,7 +40,7 @@
     "rimraf": "^2.6.1"
   },
   "dependencies": {
-    "moment": "^2.18.1",
+    "date-fns": "^1.28.5",
     "next": "^3.0.3",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",

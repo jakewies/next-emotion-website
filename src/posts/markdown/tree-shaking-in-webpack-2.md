@@ -1,6 +1,6 @@
 ---
 title: Tree-Shaking ES6 Modules in webpack 2
-date: 2017-01-16
+date: 01-16-2017
 ---
 
 Webpack 2 is still in its beta stage at the time of writing this, but should see its release very soon. It brings with it a variety of anticipated features. One of those features includes native support for ES6 modules.

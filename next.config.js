@@ -2,7 +2,6 @@ module.exports = {
   async exportPathMap() {
     const { fileMap: posts } = await require('./src/posts/index.json')
 
-    // Converts blog post ids into page objects for next export
     const postPages = Object.keys(posts)
       .map(key => posts[key].base.slice(0, -5))
       .reduce(

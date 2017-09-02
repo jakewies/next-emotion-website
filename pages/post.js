@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Layout from '../src/components/page/layout'
 import Header from '../src/components/post/header'
 import Content from '../src/components/post/content'
-import { formatDate } from '../src/utils'
+import { format } from 'date-fns'
 
 const Article = styled.article`
   padding: 0 20px;
@@ -27,7 +27,7 @@ Post.getInitialProps = async ({ query }) => {
   const post = await require(`../posts/${query.id}.json`)
   return {
     title: post.title,
-    date: formatDate(post.date, 'MM.D.YY'),
+    date: format(post.date, 'MM.DD.YY'),
     content: post.bodyHtml
   }
 }
