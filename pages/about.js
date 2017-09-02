@@ -1,8 +1,7 @@
-import React from 'react'
-import Layout from '../components/Layout'
+import Layout from '../src/components/page/layout'
 
 const About = () =>
-  <Layout>
+  <Layout title="About">
     <h1>About</h1>
   </Layout>
 

@@ -1,24 +1,41 @@
-import React from 'react'
-import Layout from '../components/Layout'
-import axios from 'axios'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
+import Layout from '../src/components/page/layout'
+import Header from '../src/components/post/header'
+import Content from '../src/components/post/content'
+import { format } from 'date-fns'
 
-/* eslint react/prop-types: 0 */
+const Article = styled.article`
+  padding: 0 20px;
+  margin: 5rem auto 0;
+  max-width: 34rem;
 
-const Post = props =>
-  <Layout>
-    <h1>
-      {props.post.title}
-    </h1>
-    <p>
-      {props.post.content}
-    </p>
+  @media (min-width: 768px) {
+    padding: 0;
+  }
+`
+
+const Post = ({ title, date, content }) =>
+  <Layout title={title}>
+    <Article>
+      <Header title={title} date={date} />
+      <Content dangerouslySetInnerHTML={{ __html: content }} />
+    </Article>
   </Layout>
 
-Post.getInitialProps = async function({ req, query }) {
-  // If server, req will be defined
-  const baseUrl = req ? `${req.protocol}://${req.get('Host')}` : ''
-  const res = await axios.get(`${baseUrl}/api/posts/${query.id}`)
-  return { post: res.data }
+Post.getInitialProps = async ({ query }) => {
+  const post = await require(`../posts/${query.id}.json`)
+  return {
+    title: post.title,
+    date: format(post.date, 'MM.DD.YY'),
+    content: post.bodyHtml
+  }
+}
+
+Post.propTypes = {
+  title: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired
 }
 
 export default Post

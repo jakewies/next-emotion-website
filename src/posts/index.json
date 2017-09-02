@@ -1,0 +1,26 @@
+{
+  "fileMap": {
+    "posts/tree-shaking-in-webpack-2.json": {
+      "title": "Tree-Shaking ES6 Modules in webpack 2",
+      "date": "01-16-2017",
+      "dir": "posts",
+      "base": "tree-shaking-in-webpack-2.json",
+      "ext": ".json",
+      "sourceBase": "tree-shaking-in-webpack-2.md",
+      "sourceExt": ".md"
+    },
+    "posts/alan-watts-wisdom.json": {
+      "title": "Alan Watts Wisdom",
+      "date": "09-02-2017",
+      "dir": "posts",
+      "base": "alan-watts-wisdom.json",
+      "ext": ".json",
+      "sourceBase": "alan-watts-wisdom.md",
+      "sourceExt": ".md"
+    }
+  },
+  "sourceFileArray": [
+    "src/posts/markdown/alan-watts-wisdom.md",
+    "src/posts/markdown/tree-shaking-in-webpack-2.md"
+  ]
+}

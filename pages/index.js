@@ -1,9 +1,11 @@
-import React from 'react'
-import Layout from '../components/Layout'
+import Layout from '../src/components/page/layout'
 
-const Index = () =>
-  <Layout>
-    <h1>Home</h1>
-  </Layout>
+function Index() {
+  return (
+    <Layout title="Jake Wiesler">
+      <h1>Home</h1>
+    </Layout>
+  )
+}
 
 export default Index

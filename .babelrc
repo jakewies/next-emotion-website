@@ -1,9 +1,4 @@
 {
-  "presets": [
-    "next/babel",
-    "stage-0"
-  ],
-  "plugins": [
-    "emotion/babel"
-  ]
+  "presets": ["next/babel", "stage-0"],
+  "plugins": ["styled-components"]
 }
