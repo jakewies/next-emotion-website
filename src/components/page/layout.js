@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
-import { injectGlobal } from 'styled-components'
+import styled, { injectGlobal } from 'styled-components'
 import Meta from './meta'
-import Header from './header'
+import Nav from './navigation'
 
 injectGlobal`
   html {
@@ -20,13 +20,15 @@ injectGlobal`
   }
 `
 
+const Main = styled.main`margin-left: 300px;`
+
 const Layout = ({ title, children }) =>
   <div>
     <Meta title={title} />
-    <main>
-      <Header />
+    <Nav />
+    <Main>
       {children}
-    </main>
+    </Main>
   </div>
 
 Layout.propTypes = {

@@ -1,11 +1,32 @@
 import Layout from '../src/components/page/layout'
+import {
+  SplashContainer,
+  Splash,
+  Title,
+  Period
+} from '../src/components/home/splash'
+import { SkillsContainer, Skill } from '../src/components/home/skills'
 
-function Index() {
-  return (
-    <Layout title="Jake Wiesler">
-      <h1>Home</h1>
-    </Layout>
-  )
-}
+const Index = () =>
+  <Layout title="Jake Wiesler">
+    <SplashContainer>
+      <Splash>
+        <Title>
+          Hi! I'm Jake
+          <Period>.</Period>
+        </Title>
+        <SkillsContainer>
+          <Skill>Front-end Developer,</Skill>
+          <Skill>CSS tinkerer, and</Skill>
+          <Skill>UI Designer.</Skill>
+        </SkillsContainer>
+        <p>
+          This is my corner of the interwebs. My Grand Central Station, if you
+          will. I <span>work</span> with and <span>write</span> about a
+          multitude of emerging technologies in the web development space.
+        </p>
+      </Splash>
+    </SplashContainer>
+  </Layout>
 
 export default Index
