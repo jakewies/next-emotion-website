@@ -15,8 +15,8 @@ module.exports = {
     // base pages
     const pages = {
       '/': { page: '/' },
-      '/about': { page: '/about' },
-      '/blog': { page: '/blog' }
+      '/blog': { page: '/blog' },
+      '/work': { page: '/work' }
     }
 
     return Object.assign({}, postPages, pages)
