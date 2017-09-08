@@ -19,10 +19,20 @@ injectGlobal`
     padding: 0;
   }
 `
+// this shouldn't be a solution
+// shouldn't have to manage layout here and in navigation.js
+// should only need to manage it in one place
+const Main = styled.main`
+  @media (min-width: 768px) {
+    margin-left: 200px;
+  }
 
-const Main = styled.main`margin-left: 300px;`
+  @media (min-width: 992px) {
+    margin-left: 300px;
+  }
+`
 
-const Layout = ({ title, children }) =>
+const Page = ({ title, children }) =>
   <div>
     <Meta title={title} />
     <Nav />
@@ -31,9 +41,9 @@ const Layout = ({ title, children }) =>
     </Main>
   </div>
 
-Layout.propTypes = {
+Page.propTypes = {
   children: PropTypes.any.isRequired,
   title: PropTypes.string.isRequired
 }
 
-export default Layout
+export default Page

@@ -1,9 +1,9 @@
-import Link from 'next/link'
+import ActiveLink from './activeLink'
 import styled from 'styled-components'
 
 const NavContainer = styled.div`
   background-color: #f7fff7;
-  width: 300px;
+  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
@@ -11,6 +11,16 @@ const NavContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+
+  @media (min-width: 768px) {
+    width: 200px;
+    opacity: 1;
+  }
+
+  @media (min-width: 992px) {
+    width: 300px;
+  }
 `
 
 const StyledNav = styled.nav`
@@ -30,15 +40,9 @@ const StyledNav = styled.nav`
 const Nav = () =>
   <NavContainer>
     <StyledNav>
-      <Link prefetch href="/">
-        <a>about</a>
-      </Link>
-      <Link prefetch href="/blog">
-        <a>blog</a>
-      </Link>
-      <Link prefetch href="/work">
-        <a>work</a>
-      </Link>
+      <ActiveLink href="/">about</ActiveLink>
+      <ActiveLink href="/blog">blog</ActiveLink>
+      <ActiveLink href="/work">work</ActiveLink>
     </StyledNav>
   </NavContainer>
 

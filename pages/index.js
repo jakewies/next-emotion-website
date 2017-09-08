@@ -1,4 +1,4 @@
-import Layout from '../src/components/page/layout'
+import Page from '../src/components/page'
 import {
   SplashContainer,
   Splash,
@@ -8,7 +8,7 @@ import {
 import { SkillsContainer, Skill } from '../src/components/home/skills'
 
 const Index = () =>
-  <Layout title="Jake Wiesler">
+  <Page title="Jake Wiesler">
     <SplashContainer>
       <Splash>
         <Title>
@@ -27,6 +27,6 @@ const Index = () =>
         </p>
       </Splash>
     </SplashContainer>
-  </Layout>
+  </Page>
 
 export default Index

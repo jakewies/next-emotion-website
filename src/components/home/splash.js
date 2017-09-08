@@ -10,6 +10,7 @@ export const SplashContainer = styled.div`
 `
 
 export const Splash = styled.div`
+  padding: 0 10px;
   color: #f7fff7;
   font-family: 'Avenir Next', sans-serif;
   max-width: 600px;

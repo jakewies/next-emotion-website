@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import Layout from '../src/components/page/layout'
+import Page from '../src/components/page'
 import Header from '../src/components/post/header'
 import Content from '../src/components/post/content'
 import { format } from 'date-fns'
@@ -16,12 +16,12 @@ const Article = styled.article`
 `
 
 const Post = ({ title, date, content }) =>
-  <Layout title={title}>
+  <Page title={title}>
     <Article>
       <Header title={title} date={date} />
       <Content dangerouslySetInnerHTML={{ __html: content }} />
     </Article>
-  </Layout>
+  </Page>
 
 Post.getInitialProps = async ({ query }) => {
   const post = await require(`../posts/${query.id}.json`)

@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types'
-import Layout from '../src/components/page/layout'
-import Posts from '../src/components/blog/posts'
+import Page from '../src/components/page'
+import PostList from '../src/components/blog/postList'
 import { getPosts } from '../src/utils'
 
 const Blog = ({ posts }) =>
-  <Layout title="Blog">
+  <Page title="Blog">
     <h1>Blog</h1>
-    <Posts posts={posts} />
-  </Layout>
+    <PostList posts={posts} />
+  </Page>
 
 Blog.getInitialProps = () => ({ posts: getPosts() })
 

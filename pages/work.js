@@ -1,8 +1,8 @@
-import Layout from '../src/components/page/layout'
+import Page from '../src/components/page'
 
 const Work = () =>
-  <Layout title="Work">
+  <Page title="Work">
     <h1>Work</h1>
-  </Layout>
+  </Page>
 
 export default Work
