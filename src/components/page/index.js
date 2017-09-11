@@ -1,7 +1,8 @@
+import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { injectGlobal } from 'styled-components'
 import Meta from './meta'
-import Nav from './navigation'
+import Nav from '../navigation'
 
 injectGlobal`
   html {
@@ -32,14 +33,45 @@ const Main = styled.main`
   }
 `
 
-const Page = ({ title, children }) =>
-  <div>
-    <Meta title={title} />
-    <Nav />
-    <Main>
-      {children}
-    </Main>
-  </div>
+const Burger = styled.span`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #ce63c1;
+  cursor: pointer;
+`
+
+class Page extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      mobileMenuActive: false
+    }
+
+    this.toggleMobileMenu = this.toggleMobileMenu.bind(this)
+  }
+
+  toggleMobileMenu(e) {
+    e.stopPropagation()
+    this.setState(prevState => ({
+      mobileMenuActive: !prevState.mobileMenuActive
+    }))
+  }
+
+  render() {
+    return (
+      <div>
+        <Meta title={this.props.title} />
+        <Burger onClick={this.toggleMobileMenu}>menu</Burger>
+        <Nav mobileMenuActive={this.state.mobileMenuActive} />
+        <Main>
+          {this.props.children}
+        </Main>
+      </div>
+    )
+  }
+}
 
 Page.propTypes = {
   children: PropTypes.any.isRequired,

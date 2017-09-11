@@ -1,9 +1,10 @@
-import ActiveLink from './activeLink'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
+import NavLink from './navLink'
 
 const NavContainer = styled.div`
   background-color: #f7fff7;
-  width: 100%;
+  width: 200px;
   position: fixed;
   top: 0;
   left: 0;
@@ -11,11 +12,11 @@ const NavContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0;
+  transform: translateX(${props => (props.toggleMobileMenu ? 0 : -300)}px);
+  transition: transform 0.3s ease;
 
   @media (min-width: 768px) {
-    width: 200px;
-    opacity: 1;
+    transform: translateX(0px);
   }
 
   @media (min-width: 992px) {
@@ -37,13 +38,16 @@ const StyledNav = styled.nav`
   }
 `
 
-const Nav = () =>
-  <NavContainer>
+const Nav = ({ mobileMenuActive }) =>
+  <NavContainer toggleMobileMenu={mobileMenuActive}>
     <StyledNav>
-      <ActiveLink href="/">about</ActiveLink>
-      <ActiveLink href="/blog">blog</ActiveLink>
-      <ActiveLink href="/work">work</ActiveLink>
+      <NavLink href="/">about</NavLink>
+      <NavLink href="/blog">blog</NavLink>
+      <NavLink href="/work">work</NavLink>
     </StyledNav>
   </NavContainer>
 
+Nav.propTypes = {
+  mobileMenuActive: PropTypes.bool.isRequired
+}
 export default Nav
