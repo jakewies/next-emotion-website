@@ -24,6 +24,8 @@ injectGlobal`
 // shouldn't have to manage layout here and in navigation.js
 // should only need to manage it in one place
 const Main = styled.main`
+  background: #f7fff7;
+  min-height: 100vh;
   @media (min-width: 768px) {
     margin-left: 200px;
   }
@@ -39,6 +41,10 @@ const Burger = styled.span`
   right: 10px;
   color: #ce63c1;
   cursor: pointer;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 `
 
 class Page extends React.Component {

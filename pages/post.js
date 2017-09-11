@@ -6,13 +6,9 @@ import Content from '../src/components/post/content'
 import { format } from 'date-fns'
 
 const Article = styled.article`
-  padding: 0 20px;
-  margin: 5rem auto 0;
+  padding: 5rem 1.2rem;
+  margin: 0 auto;
   max-width: 34rem;
-
-  @media (min-width: 768px) {
-    padding: 0;
-  }
 `
 
 const Post = ({ title, date, content }) =>
