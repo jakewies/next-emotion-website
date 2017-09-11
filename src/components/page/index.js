@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled, { injectGlobal } from 'styled-components'
+import { injectGlobal } from 'emotion'
+import styled from 'react-emotion'
 import Meta from './meta'
 import Nav from '../navigation'
 

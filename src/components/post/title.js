@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'react-emotion'
 
 const Title = styled.h1`
   --scale: 1.618;

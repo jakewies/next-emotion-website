@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'react-emotion'
 
 const Content = styled.section`
   --base-line-height: 1.7;
@@ -10,28 +10,28 @@ const Content = styled.section`
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 
-  h2,
-  h3,
-  h4 {
+  & h2,
+  & h3,
+  & h4 {
     font-weight: 500;
     margin-top: var(--leading);
     margin-bottom: 0;
     line-height: var(--leading);
   }
 
-  h2 {
+  & h2 {
     font-size: calc(1.25 * var(--scale) * 1rem);
     line-height: calc(1.25 * var(--leading));
     margin-top: calc(1.25 * var(--leading));
   }
-  h3 {
+  & h3 {
     font-size: calc(1 * var(--scale) * 1rem);
   }
-  h4 {
+  & h4 {
     font-size: calc(var(--scale) / 1.25 * 1rem);
   }
 
-  p {
+  & p {
     font-size: 1.11rem;
     line-height: var(--leading);
     margin-top: var(--leading);
@@ -39,30 +39,30 @@ const Content = styled.section`
     font-weight: 300;
   }
 
-  a {
+  & a {
     color: fuchsia;
   }
 
-  ul,
-  ol {
+  & ul,
+  & ol {
     margin-top: var(--leading);
     margin-bottom: var(--leading);
   }
 
-  ul li,
-  ol li {
+  & ul li,
+  & ol li {
     line-height: var(--leading);
   }
 
-  ul ul,
-  ol ul,
-  ul ol,
-  ol ol {
+  & ul ul,
+  & ol ul,
+  & ul ol,
+  & ol ol {
     margin-top: 0;
     margin-bottom: 0;
   }
 
-  blockquote {
+  & blockquote {
     line-height: var(--leading);
     margin-top: var(--leading);
     margin-bottom: var(--leading);
@@ -72,7 +72,7 @@ const Content = styled.section`
     color: #777;
   }
 
-  pre {
+  & pre {
     display: block;
     width: 100%;
     padding: 20px;
@@ -85,7 +85,7 @@ const Content = styled.section`
     margin-top: var(--leading);
   }
 
-  code {
+  & code {
     color: fuchsia;
     border: 1px solid #eee;
     background: #f7f7f7;
@@ -93,7 +93,7 @@ const Content = styled.section`
     font-size: 1rem;
   }
 
-  pre > code {
+  & pre > code {
     margin: 0;
     border: 0;
     padding: 0;

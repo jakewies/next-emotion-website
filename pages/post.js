@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import styled from 'react-emotion'
 import Page from '../src/components/page'
 import Header from '../src/components/post/header'
 import Content from '../src/components/post/content'
@@ -21,6 +21,7 @@ const Post = ({ title, date, content }) =>
 
 Post.getInitialProps = async ({ query }) => {
   const post = await require(`../posts/${query.id}.json`)
+  console.log(post)
   return {
     title: post.title,
     date: format(post.date, 'MM.DD.YY'),

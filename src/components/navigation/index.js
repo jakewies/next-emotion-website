@@ -1,10 +1,10 @@
-import styled from 'styled-components'
+import styled from 'react-emotion'
 import PropTypes from 'prop-types'
 import NavLink from './navLink'
 
 const NavContainer = styled.div`
   background-color: #f7fff7;
-  width: 200px;
+  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
@@ -12,11 +12,9 @@ const NavContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: translateX(${props => (props.toggleMobileMenu ? 0 : -300)}px);
-  transition: transform 0.3s ease;
 
   @media (min-width: 768px) {
-    transform: translateX(0px);
+    width: 200px;
   }
 
   @media (min-width: 992px) {
@@ -29,7 +27,7 @@ const StyledNav = styled.nav`
   display: flex;
   flex-direction: column;
 
-  a {
+  & a {
     color: #301c6d;
     font-family: system-ui;
     margin-bottom: 1.5rem;
@@ -50,4 +48,5 @@ const Nav = ({ mobileMenuActive }) =>
 Nav.propTypes = {
   mobileMenuActive: PropTypes.bool.isRequired
 }
+
 export default Nav
