@@ -1,9 +1,7 @@
 import styled from 'react-emotion'
+import { lineHeight, scale } from '../../utils/typography'
 
 const Content = styled.section`
-  --base-line-height: 1.7;
-  --leading: calc(var(--base-line-height) * 1rem);
-  --scale: 1.618;
   color: #333;
 
   /* Blog post typography base */
@@ -14,27 +12,27 @@ const Content = styled.section`
   & h3,
   & h4 {
     font-weight: 500;
-    margin-top: var(--leading);
+    margin-top: calc(${lineHeight} * 1rem);
     margin-bottom: 0;
-    line-height: var(--leading);
+    line-height: calc(${lineHeight} * 1rem);
   }
 
   & h2 {
-    font-size: calc(1.25 * var(--scale) * 1rem);
-    line-height: calc(1.25 * var(--leading));
-    margin-top: calc(1.25 * var(--leading));
+    font-size: calc(1.25 * ${scale} * 1rem);
+    line-height: calc(1.25 * calc(${lineHeight} * 1rem););
+    margin-top: calc(1.25 * calc(${lineHeight} * 1rem););
   }
   & h3 {
-    font-size: calc(1 * var(--scale) * 1rem);
+    font-size: calc(1 * ${scale} * 1rem);
   }
   & h4 {
-    font-size: calc(var(--scale) / 1.25 * 1rem);
+    font-size: calc(${scale} / 1.25 * 1rem);
   }
 
   & p {
     font-size: 1.11rem;
-    line-height: var(--leading);
-    margin-top: var(--leading);
+    line-height: calc(${lineHeight} * 1rem);
+    margin-top: calc(${lineHeight} * 1rem);
     margin-bottom: 0;
     font-weight: 300;
   }
@@ -45,13 +43,13 @@ const Content = styled.section`
 
   & ul,
   & ol {
-    margin-top: var(--leading);
-    margin-bottom: var(--leading);
+    margin-top: calc(${lineHeight} * 1rem);
+    margin-bottom: calc(${lineHeight} * 1rem);
   }
 
   & ul li,
   & ol li {
-    line-height: var(--leading);
+    line-height: calc(${lineHeight} * 1rem);
   }
 
   & ul ul,
@@ -63,9 +61,9 @@ const Content = styled.section`
   }
 
   & blockquote {
-    line-height: var(--leading);
-    margin-top: var(--leading);
-    margin-bottom: var(--leading);
+    line-height: calc(${lineHeight} * 1rem);
+    margin-top: calc(${lineHeight} * 1rem);
+    margin-bottom: calc(${lineHeight} * 1rem);
     width: 90%;
     margin: 0 auto;
     font-style: italic;
@@ -82,7 +80,7 @@ const Content = styled.section`
     vertical-align: bottom;
     overflow: scroll;
     font-family: menlo, monospace;
-    margin-top: var(--leading);
+    margin-top: calc(${lineHeight} * 1rem);
   }
 
   & code {

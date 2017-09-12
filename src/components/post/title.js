@@ -1,8 +1,8 @@
 import styled from 'react-emotion'
+import { scale } from '../../utils/typography'
 
 const Title = styled.h1`
-  --scale: 1.618;
-  font-size: calc(1.65 * var(--scale) * 1rem);
+  font-size: calc(1.65 * ${scale} * 1rem);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   letter-spacing: -1px;

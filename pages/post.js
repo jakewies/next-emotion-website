@@ -21,7 +21,7 @@ const Post = ({ title, date, content }) =>
 
 Post.getInitialProps = async ({ query }) => {
   const post = await require(`../posts/${query.id}.json`)
-  console.log(post)
+
   return {
     title: post.title,
     date: format(post.date, 'MM.DD.YY'),
