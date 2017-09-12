@@ -3,17 +3,18 @@ import PropTypes from 'prop-types'
 import NavLink from './navLink'
 
 const NavContainer = styled.div`
+  display: ${props => (props.showMobileMenu ? 'flex' : 'none')};
+  justify-content: center;
+  align-items: center;
   background-color: #f7fff7;
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
   @media (min-width: 768px) {
+    display: flex;
     width: 200px;
   }
 
@@ -36,8 +37,8 @@ const StyledNav = styled.nav`
   }
 `
 
-const Nav = ({ mobileMenuActive }) =>
-  <NavContainer toggleMobileMenu={mobileMenuActive}>
+const Nav = ({ showMobileMenu }) =>
+  <NavContainer showMobileMenu={showMobileMenu}>
     <StyledNav>
       <NavLink href="/">about</NavLink>
       <NavLink href="/blog">blog</NavLink>
@@ -46,7 +47,7 @@ const Nav = ({ mobileMenuActive }) =>
   </NavContainer>
 
 Nav.propTypes = {
-  mobileMenuActive: PropTypes.bool.isRequired
+  showMobileMenu: PropTypes.bool.isRequired
 }
 
 export default Nav

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { injectGlobal } from 'emotion'
 import styled from 'react-emotion'
 import Meta from './meta'
+import Burger from './burger'
 import Nav from '../navigation'
 
 injectGlobal`
@@ -36,24 +37,12 @@ const Main = styled.main`
   }
 `
 
-const Burger = styled.span`
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  color: #ce63c1;
-  cursor: pointer;
-
-  @media (min-width: 768px) {
-    display: none;
-  }
-`
-
 class Page extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      mobileMenuActive: false
+      showMobileMenu: false
     }
 
     this.toggleMobileMenu = this.toggleMobileMenu.bind(this)
@@ -62,7 +51,7 @@ class Page extends React.Component {
   toggleMobileMenu(e) {
     e.stopPropagation()
     this.setState(prevState => ({
-      mobileMenuActive: !prevState.mobileMenuActive
+      showMobileMenu: !prevState.showMobileMenu
     }))
   }
 
@@ -70,8 +59,8 @@ class Page extends React.Component {
     return (
       <div>
         <Meta title={this.props.title} />
-        <Burger onClick={this.toggleMobileMenu}>menu</Burger>
-        <Nav mobileMenuActive={this.state.mobileMenuActive} />
+        <Burger handleClick={this.toggleMobileMenu} />
+        <Nav showMobileMenu={this.state.showMobileMenu} />
         <Main>
           {this.props.children}
         </Main>
