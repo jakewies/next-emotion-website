@@ -1,9 +1,7 @@
-import React from 'react'
 import PropTypes from 'prop-types'
 import { injectGlobal } from 'emotion'
 import styled from 'react-emotion'
 import Meta from './meta'
-import Burger from './burger'
 import Nav from '../navigation'
 
 injectGlobal`
@@ -37,38 +35,14 @@ const Main = styled.main`
     margin-left: 300px;
   }
 `
-
-class Page extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      showMobileMenu: false
-    }
-
-    this.toggleMobileMenu = this.toggleMobileMenu.bind(this)
-  }
-
-  toggleMobileMenu(e) {
-    e.stopPropagation()
-    this.setState(prevState => ({
-      showMobileMenu: !prevState.showMobileMenu
-    }))
-  }
-
-  render() {
-    return (
-      <div>
-        <Meta title={this.props.title} />
-        <Burger handleClick={this.toggleMobileMenu} />
-        <Nav showMobileMenu={this.state.showMobileMenu} />
-        <Main>
-          {this.props.children}
-        </Main>
-      </div>
-    )
-  }
-}
+const Page = ({ title, children }) =>
+  <div>
+    <Meta title={title} />
+    <Nav />
+    <Main>
+      {children}
+    </Main>
+  </div>
 
 Page.propTypes = {
   children: PropTypes.any.isRequired,

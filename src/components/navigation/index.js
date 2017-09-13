@@ -1,20 +1,21 @@
+import React from 'react'
 import styled from 'react-emotion'
-import PropTypes from 'prop-types'
+import Burger from './burger'
 import NavLink from './navLink'
 
 const NavContainer = styled.div`
-  display: ${props => (props.showMobileMenu ? 'flex' : 'none')};
+  display: flex;
   justify-content: center;
   align-items: center;
   background-color: #f7fff7;
+  height: ${props => (props.showMobileMenu ? '100%' : '0')};
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  bottom: 0;
 
   @media (min-width: 768px) {
-    display: flex;
+    height: 100%;
     width: 200px;
   }
 
@@ -23,9 +24,9 @@ const NavContainer = styled.div`
   }
 `
 
-const StyledNav = styled.nav`
+const NavLinks = styled.nav`
   width: 50%;
-  display: flex;
+  display: ${props => (props.showMobileMenu ? 'flex' : 'none')};
   flex-direction: column;
 
   & a {
@@ -34,19 +35,42 @@ const StyledNav = styled.nav`
     text-align: right;
     text-decoration: none;
   }
+
+  @media (min-width: 768px) {
+    display: flex;
+  }
 `
 
-const Nav = ({ showMobileMenu }) =>
-  <NavContainer showMobileMenu={showMobileMenu}>
-    <StyledNav>
-      <NavLink href="/">about</NavLink>
-      <NavLink href="/blog">blog</NavLink>
-      <NavLink href="/work">work</NavLink>
-    </StyledNav>
-  </NavContainer>
+class Nav extends React.Component {
+  constructor(props) {
+    super(props)
 
-Nav.propTypes = {
-  showMobileMenu: PropTypes.bool.isRequired
+    this.state = {
+      showMobileMenu: false
+    }
+
+    this.toggleMobileMenu = this.toggleMobileMenu.bind(this)
+  }
+
+  toggleMobileMenu(e) {
+    e.stopPropagation()
+    this.setState(prevState => ({
+      showMobileMenu: !prevState.showMobileMenu
+    }))
+  }
+
+  render() {
+    return (
+      <NavContainer testies={true} showMobileMenu={this.state.showMobileMenu}>
+        <Burger handleClick={this.toggleMobileMenu} />
+        <NavLinks showMobileMenu={this.state.showMobileMenu}>
+          <NavLink href="/">about</NavLink>
+          <NavLink href="/blog">blog</NavLink>
+          <NavLink href="/work">work</NavLink>
+        </NavLinks>
+      </NavContainer>
+    )
+  }
 }
 
 export default Nav
