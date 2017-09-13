@@ -3,13 +3,13 @@ import PropTypes from 'prop-types'
 
 const config = {
   height: '40px',
-  width: '30px'
+  width: '25px'
 }
 
 const BurgerContainer = styled.div`
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 15px;
+  left: 15px;
   height: ${config.height};
   width: ${config.width};
   cursor: pointer;
@@ -20,7 +20,7 @@ const BurgerInner = styled.div`
   position: absolute;
   top: calc(${config.height}/2 - 2px);
   width: 100%;
-  height: 4px;
+  height: 2px;
   background-color: #8f8aac;
   cursor: pointer;
   z-index: 1;
@@ -30,18 +30,18 @@ const BurgerInner = styled.div`
   &:after {
     content: '';
     width: 100%;
-    height: 4px;
+    height: 2px;
     position: absolute;
     background-color: #8f8aac;
     border-radius: 2px;
   }
 
   &:before {
-    top: -10px;
+    top: -8px;
   }
 
   &:after {
-    bottom: -10px;
+    bottom: -8px;
   }
 
   @media (min-width: 768px) {

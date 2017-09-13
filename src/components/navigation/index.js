@@ -30,7 +30,6 @@ const StyledNav = styled.nav`
 
   & a {
     color: #301c6d;
-    font-family: system-ui;
     margin-bottom: 1.5rem;
     text-align: right;
     text-decoration: none;
