@@ -25,8 +25,12 @@ injectGlobal`
 // shouldn't have to manage layout here and in navigation.js
 // should only need to manage it in one place
 const Main = styled.main`
-  background: #f7fff7;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   min-height: 100vh;
+  background: #f7fff7;
+
   @media (min-width: 768px) {
     margin-left: 200px;
   }
@@ -35,10 +39,10 @@ const Main = styled.main`
     margin-left: 300px;
   }
 `
-const Page = ({ title, children }) =>
+const Page = ({ title, children, mobileNavBg }) =>
   <div>
     <Meta title={title} />
-    <Nav />
+    <Nav mobileBg={mobileNavBg || 'transparent'} />
     <Main>
       {children}
     </Main>
@@ -46,7 +50,8 @@ const Page = ({ title, children }) =>
 
 Page.propTypes = {
   children: PropTypes.any.isRequired,
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
+  mobileNavBg: PropTypes.string
 }
 
 export default Page

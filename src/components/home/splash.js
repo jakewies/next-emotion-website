@@ -4,9 +4,9 @@ export const SplashContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-grow: 1;
   background-color: #4a2d92;
   background-image: radial-gradient(circle, #4a2d92, #301c6d);
-  min-height: 100vh;
 `
 
 export const Splash = styled.div`

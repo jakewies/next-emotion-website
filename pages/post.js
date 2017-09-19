@@ -1,22 +1,24 @@
 import PropTypes from 'prop-types'
 import styled from 'react-emotion'
 import Page from '../src/components/page'
+import PageInner from '../src/components/page/pageInner'
 import Header from '../src/components/post/header'
 import Content from '../src/components/post/content'
 import { format } from 'date-fns'
 
 const Article = styled.article`
-  padding: 5rem 1.2rem;
   margin: 0 auto;
   max-width: 34rem;
 `
 
 const Post = ({ title, date, content }) =>
-  <Page title={title}>
-    <Article>
-      <Header title={title} date={date} />
-      <Content dangerouslySetInnerHTML={{ __html: content }} />
-    </Article>
+  <Page title={title} mobileNavBg={'#f7fff7'}>
+    <PageInner>
+      <Article>
+        <Header title={title} date={date} />
+        <Content dangerouslySetInnerHTML={{ __html: content }} />
+      </Article>
+    </PageInner>
   </Page>
 
 Post.getInitialProps = async ({ query }) => {

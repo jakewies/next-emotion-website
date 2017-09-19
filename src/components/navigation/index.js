@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'react-emotion'
 import Burger from './burger'
 import NavLink from './navLink'
@@ -7,8 +8,9 @@ const NavContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f7fff7;
-  height: ${props => (props.showMobileMenu ? '100%' : '0')};
+  background-color: ${props =>
+    props.showMobileMenu ? '#f7fff7' : props.mobileBg};
+  height: ${props => (props.showMobileMenu ? '100%' : '70px')};
   width: 100%;
   position: fixed;
   top: 0;
@@ -17,6 +19,7 @@ const NavContainer = styled.div`
   @media (min-width: 768px) {
     height: 100%;
     width: 200px;
+    background-color: #f7fff7;
   }
 
   @media (min-width: 992px) {
@@ -61,7 +64,9 @@ class Nav extends React.Component {
 
   render() {
     return (
-      <NavContainer testies={true} showMobileMenu={this.state.showMobileMenu}>
+      <NavContainer
+        mobileBg={this.props.mobileBg}
+        showMobileMenu={this.state.showMobileMenu}>
         <Burger handleClick={this.toggleMobileMenu} />
         <NavLinks showMobileMenu={this.state.showMobileMenu}>
           <NavLink href="/">about</NavLink>
@@ -71,6 +76,10 @@ class Nav extends React.Component {
       </NavContainer>
     )
   }
+}
+
+Nav.propTypes = {
+  mobileBg: PropTypes.string.isRequired
 }
 
 export default Nav
